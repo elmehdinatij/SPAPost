@@ -1,0 +1,32 @@
+<div class="container">
+  
+  <button class="btn btn-danger" routerLink="../update-post">Ajouter un post <i class="fa fa-plus"></i></button>
+  <h1>Liste des posts</h1>
+  <div id="table-wrapper">
+    <div id="table-scroll">
+      <table class="table table-striped table-sm table-bordered text-center" style="overflow-y: scroll;">
+        <thead>
+          <tr>
+            <th class="text">Operation</th>
+            <th class="text">User ID</th>
+            <th class="text">ID</th>
+            <th class="text">Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let b of listPost">
+            <td class="text-center" style="width: 10%">
+              <a class="btn" (click)="onEditPost(b)" class="clickable">
+                <span class="fa fa-edit fa-2x text-danger"></span>
+              </a>
+            </td>
+            <td>{{ b.userId }}</td>
+            <td>{{ b.id }}</td>
+            <td>{{ b.title }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
